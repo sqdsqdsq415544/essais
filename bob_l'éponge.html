@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bob l'éponge</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Informations saisies :</h1>
+    <table>
+        <tr>
+            <th>Nom de compte</th>
+            <th>Mot de passe</th>
+        </tr>
+        <tr>
+            <td id="login"></td>
+            <td id="age"></td>
+        </tr>
+    </table>
+
+    <script>
+        // Récupérer les données soumises par le formulaire
+        const urlParams = new URLSearchParams(window.location.search);
+        const login = urlParams.get('login');
+        const age = urlParams.get('age');
+
+        // Afficher les données dans le tableau
+        document.getElementById('login').textContent = login;
+        document.getElementById('age').textContent = age;
+    </script>
+</body>
+</html>
